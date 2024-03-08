@@ -1,6 +1,10 @@
 # Filling out declarations for academic papers
 
-Currently this just supports Elsevier forms, and I've only tested it in two.
+I am so fed up of the form-filling nonsense. Especially PDFs. I'm going to automate it all, dammit.
+
+So far this only supports Elsevier Author statements forms, and I've only tested it in two. I'll add to it as I go.
+
+# How to use
 
 To use, first prepare a file called `sigs.pdf` and place it in the root folder. To do this:
 
