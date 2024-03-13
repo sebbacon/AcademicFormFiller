@@ -123,16 +123,15 @@ def replace_disclosure_tables(source_elem, config):
     for i, author_disclosures_for_coi in enumerate(all_author_disclosures.values()):
         generated_disclosure_xml = replacement_xml
         if author_disclosures_for_coi:
-            # Tick the box
             generated_disclosure_xml = generated_disclosure_xml.replace(
-                "{{ disclosure_checkbox }}", CHECKBOX
+                "{{ disclosure_checkbox }}", EMPTY_CHECKBOX
             )
 
         else:
-            # It's an empty array; leave the checkbox empty, and add a dummy row
+            # It's an empty array; tick the box (for "none"), and add a dummy row
             # so there's empty strings in the text cells
             generated_disclosure_xml = generated_disclosure_xml.replace(
-                "{{ disclosure_checkbox }}", EMPTY_CHECKBOX
+                "{{ disclosure_checkbox }}", CHECKBOX
             )
 
             author_disclosures_for_coi.append({"entity": "", "comment": ""})
