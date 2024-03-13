@@ -1,2 +1,24 @@
 name: "Gordon Bennett"
 highest_degree: "Grade 6 Violin"
+manuscript_title: "Things"
+manuscript_number: 123123abcabc
+disclosures:
+  # maintain in this order, as they appear in ICMJE form
+  manuscript_support:
+    - entity: asd
+      comment: asd
+  grants_or_contracts:
+    - entity: foo
+      comment: foo
+  royalties_or_licences: []
+  consulting_fees: []
+  payment_for_events: []
+  payment_for_testimony: []
+  meetings_or_travel_support: []
+  patents: []
+  data_safety_or_advisory_board_participation: []
+  other_board_participation: []
+  stock: []
+  receipt_of_gifts_or_services: []
+  other_interests: []
+

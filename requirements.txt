@@ -4,7 +4,11 @@
 #
 #    pip-compile
 #
+lxml==5.1.0
+    # via -r requirements.in
 pypdf==4.1.0
     # via -r requirements.in
 pyyaml==6.0.1
+    # via -r requirements.in
+ruff==0.3.1
     # via -r requirements.in

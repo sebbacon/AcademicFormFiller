@@ -1,2 +1,4 @@
 pypdf
 PyYAML
+ruff
+lxml
