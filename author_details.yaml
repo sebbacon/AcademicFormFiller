@@ -2,13 +2,15 @@ name: "Gordon Bennett"
 highest_degree: "Grade 6 Violin"
 manuscript_title: "Things"
 manuscript_number: 123123abcabc
-disclosures:
-  # maintain in this order, as they appear in ICMJE form
+disclosures: # Only used in ICMHE
+  # maintain in this order
   manuscript_support:
     - entity: asd
       comment: asd
+    - entity: bar
+      comment: foo
   grants_or_contracts:
-    - entity: foo
+    - entity: foo2
       comment: foo
   royalties_or_licences: []
   consulting_fees: []
