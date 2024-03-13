@@ -139,16 +139,20 @@ def replace_disclosure_tables(source_elem, config):
         generated_disclosure_elem = etree.XML(
             f"<root {ns_strings}>{generated_disclosure_xml}</root>"
         )
+        declaration_column = generated_disclosure_elem.xpath(
+            ".//*[@id='declaration']", namespaces=ns
+        )[0]
+        declaration_column_str_template = etree.tostring(declaration_column).decode(
+            "utf-8"
+        )
+        for child in list(declaration_column):
+            declaration_column.remove(child)
 
         for individual_disclosure in author_disclosures_for_coi:
+            declaration_column_str = declaration_column_str_template
             # get the subfragment with id "declaration" by
             # extracting xpath and converting back to a string so we
             # can do substitutions
-
-            declaration_column = generated_disclosure_elem.xpath(
-                ".//*[@id='declaration']", namespaces=ns
-            )[0]
-            declaration_column_str = etree.tostring(declaration_column).decode("utf-8")
 
             # Do the substitutions
             declaration_column_str = declaration_column_str.replace(
@@ -163,10 +167,8 @@ def replace_disclosure_tables(source_elem, config):
                 declaration_column_str,
                 etree.XMLParser(ns_clean=True, recover=True, remove_blank_text=True),
             )
-            for child in list(declaration_column):
-                declaration_column.remove(child)
-            for child in list(new_column):
-                declaration_column.append(child)
+
+            declaration_column.getparent().append(new_column)
 
         source_disclosure = source_disclosures_to_replace[i]
 
