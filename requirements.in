@@ -2,3 +2,5 @@ pypdf
 PyYAML
 ruff
 lxml
+pillow
+reportlab

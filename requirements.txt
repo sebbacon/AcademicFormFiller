@@ -4,11 +4,19 @@
 #
 #    pip-compile
 #
+chardet==5.2.0
+    # via reportlab
 lxml==5.1.0
     # via -r requirements.in
+pillow==10.2.0
+    # via
+    #   -r requirements.in
+    #   reportlab
 pypdf==4.1.0
     # via -r requirements.in
 pyyaml==6.0.1
+    # via -r requirements.in
+reportlab==4.1.0
     # via -r requirements.in
 ruff==0.3.1
     # via -r requirements.in

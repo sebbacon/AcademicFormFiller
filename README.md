@@ -16,17 +16,11 @@ Install the requirements with `pip install requirements.txt`
 
 # How to use: Elsevier
 
-To use, first prepare a file called `sigs.pdf` and place it in the root folder. To do this:
-
-* Open `sig_template.pdf` in GIMP
-* Position a signature in two places in the form: 
-   * The "I agree..." bit near the middle (the line with Highest degree, etc). (It's a good idea to add it to the _second_ line, as the first author will often prefill a supplied template with their own name on the first line; and if they don't, it doesn't matter if the first line is blank)
-   * The "Corresponding author declaration" near the bottom
-* Save it as `sigs.pdf` 
+Create a 396x99 pixel image of your signature, with a transparency background, and save it as a PNG. (There's an example at `example_sig.png`)
 
 Now, every time you need to sign a form:
 
-     python sign.py <input_pdf_path> <output_pdf_path>
+    python sign.py <input_pdf_path> <output_pdf_path> <signature_png_path>
 
 # How to use: ICMJE
 
