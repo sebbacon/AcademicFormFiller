@@ -16,7 +16,7 @@ Install the requirements with `pip install requirements.txt`
 
 # How to use: Elsevier
 
-Create a 396x99 pixel image of your signature, with a transparency background, and save it as a PNG. (There's an example at `example_sig.png`)
+Create a 396x99 pixel image of your signature, with a white background, and save it as a PNG. (There's an example at `example_sig.png`)
 
 Now, every time you need to sign a form:
 
