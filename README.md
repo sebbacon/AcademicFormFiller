@@ -22,6 +22,8 @@ Now, every time you need to sign a form:
 
     python sign.py <input_pdf_path> <output_pdf_path> <signature_png_path>
 
+This signs it on the second line, following the convention that you're adding your signature to that of the corresponding author on the first line.
+
 # How to use: ICMJE
 
 Edit `author_details.yaml`, then:

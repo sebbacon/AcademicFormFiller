@@ -38,22 +38,30 @@ def sign(input_pdf, output_pdf):
 
 
 def make_overlay(image_path):
-    coords1 = (216, 3189)  # Bottom left sig
-    coords2 = (1615, 2177)  # Middle right sig
+    # A4 dimensions (300dpi)
+    a4_width_pts = 595
+    a4_height_pts = 842
+
+    a4_width_px = 2480
+    a4_height_px = 3507
+
+    coords1 = (216, 3189)  # Corresponding author sig - we blank that out
+    coords2 = (1615, 2177)  # Author sig, second row
 
     sig_image = Image.open(image_path)
+    blank_box = Image.new("RGB", (396, 99), (255, 255, 255))
 
-    result_image = Image.new("RGBA", (2480, 3507), (255, 0, 0, 0))
-    result_image.paste(sig_image, coords1)
+    result_image = Image.new("RGBA", (a4_width_px, a4_height_px), (255, 0, 0, 0))
+    result_image.paste(blank_box, coords1)
     result_image.paste(sig_image, coords2)
 
     temp_png_path = "temp_image.png"
     result_image.save(temp_png_path, format="PNG")
-    # A4 dimensions in points
-    a4_width = 595
-    a4_height = 842
+
     c = canvas.Canvas("sigs.pdf", pagesize=letter)
-    c.drawImage(temp_png_path, 0, 0, width=a4_width, height=a4_height, mask="auto")
+    c.drawImage(
+        temp_png_path, 0, 0, width=a4_width_pts, height=a4_height_pts, mask="auto"
+    )
     c.save()
 
     os.remove(temp_png_path)
