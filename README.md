@@ -1,4 +1,4 @@
-# Filling out declarations for academic papers
+# Fending-off Academic Form Fuss
 
 I am so fed up of the form-filling nonsense. Especially PDFs. I'm going to automate it all, dammit.
 
